@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import NavLink from "./navLink";
+import Image from "next/image";
 
 
 const links = [
@@ -35,22 +36,22 @@ const Navbar = () => {
             {/* SOCIAL */}
             <div className="hidden md:flex gap-4 w-1/3">
             <Link href="#">
-                <img src="/github.png" alt="" width={24} height={24} />
+                <Image src="/github.png" alt="" width={24} height={24} />
             </Link>
             <Link href="#">
-                <img src="/dribbble.png" alt="" width={24} height={24} />
+                <Image src="/dribbble.png" alt="" width={24} height={24} />
             </Link>
             <Link href="#">
-                <img src="/instagram.png" alt="" width={24} height={24} />
+                <Image src="/instagram.png" alt="" width={24} height={24} />
             </Link>
             <Link href="#">
-                <img src="/facebook.png" alt="" width={24} height={24} />
+                <Image src="/facebook.png" alt="" width={24} height={24} />
             </Link>
             <Link href="#">
-                <img src="/pinterest.png" alt="" width={24} height={24} />
+                <Image src="/pinterest.png" alt="" width={24} height={24} />
             </Link>
             <Link href="#">
-                <img src="/Linkedin.png" alt="" width={24} height={24} />
+                <Image src="/Linkedin.png" alt="" width={24} height={24} />
             </Link>
             </div>
             {/* RESPONSIVE MENU */}
