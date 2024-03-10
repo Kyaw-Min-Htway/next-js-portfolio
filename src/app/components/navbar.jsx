@@ -53,8 +53,9 @@ const Navbar = () => {
             x: 0,
             
             transition: {
-                staggerChildren: 0.2
-            }
+                when: "beforeChildren",
+                staggerChildren: 0.2,
+            },
         },
     };
     const listItemVariants = {
