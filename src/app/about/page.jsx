@@ -84,75 +84,23 @@ const AboutPage = () => {
                 </div>
                 {/* RIGHT */}
                 <div className="w-1/3">
-                <div className="bg-white p-3 font-semiblod rounded-b-lg rounded-s-lg">
-                    Junior Javascript Engineer
-                  </div>
-                  {/* JOB DESC */}
-                  <div className="p-3 text-sm italic">
-                    My current employment. Way better than the position before!
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="p-3 text-red-400 text-sm font-semibold">
-                    2024 - Present
-                  </div>
                 </div>
               </div>
               {/* EXPERIENCE LIST ITEM */}
-              <div className="">
+              <div className="flex justify-between h-48">
                 {/* LEFT */}
-                <div className="">
-                  {/* JOB TITLE */}
-                  <div className="">
-                    Junior Javascript Engineer
-                  </div>
-                  {/* JOB DESC */}
-                  <div className="">
-                    My current employment. Way better than the position before!
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="">
-                    2024 - Present
-                  </div>
+                <div className="w-1/3">
                 </div>
                 {/* CENTER */}
-                <div className="">
+                <div className="w-1/6">
                   {/* LINE  */}
-                  <div className="">
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
                     {/* LINE CIRCCLE */}
-                    <div className=""></div>
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
                   </div>
                 </div>
                 {/* RIGHT */}
-                <div className=""></div>
-              </div>
-              {/* EXPERIENCE LIST ITEM */}
-              <div className="">
-                {/* LEFT */}
-                <div className="">
-                  {/* JOB TITLE */}
-                  <div className="">
-                    Junior Javascript Engineer
-                  </div>
-                  {/* JOB DESC */}
-                  <div className="">
-                    My current employment. Way better than the position before!
-                  </div>
-                  {/* JOB DATE */}
-                  <div className="">
-                    2024 - Present
-                  </div>
-                </div>
-                {/* CENTER */}
-                <div className="">
-                  {/* LINE  */}
-                  <div className="">
-                    {/* LINE CIRCCLE */}
-                    <div className=""></div>
-                  </div>
-                </div>
-                {/* RIGHT */}
-                <div className="">
-                  {/* JOB TITLE */}
+                <div className="w-1/3">
                   <div className="bg-white p-3 font-semiblod rounded-b-lg rounded-s-lg">
                     Junior Javascript Engineer
                   </div>
@@ -166,11 +114,40 @@ const AboutPage = () => {
                   </div>
                 </div>
               </div>
+              {/* EXPERIENCE LIST ITEM */}
+              <div className="flex justify-between h-48">
+                {/* LEFT */}
+                <div className="w-1/3">
+                  {/* JOB TITLE */}
+                  <div className="bg-white p-3 font-semiblod rounded-b-lg rounded-s-lg">
+                    Junior Javascript Engineer
+                  </div>
+                  {/* JOB DESC */}
+                  <div className="p-3 text-sm italic">
+                    My current employment. Way better than the position before!
+                  </div>
+                  {/* JOB DATE */}
+                  <div className="p-3 text-red-400 text-sm font-semibold">
+                    2024 - Present
+                  </div>
+                </div>
+                {/* CENTER */}
+                <div className="w-1/6">
+                  {/* LINE  */}
+                  <div className="w-1 h-full bg-gray-600 rounded relative">
+                    {/* LINE CIRCCLE */}
+                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                  </div>
+                </div>
+                {/* RIGHT */}
+                <div className="w-1/3">
+                </div>
+              </div>
               </div>
             </div>
           </div>
           {/* SVG CONTAINER */}
-          <div className="hidden"></div>
+          <div className="hidden lg-block"></div>
         </div>
       </motion.div>
     )
