@@ -1,8 +1,21 @@
 'use client';
 
-import { motion } from "framer-motion";
+import { delay, motion, useInView, useScroll } from "framer-motion";
+import { Dekko } from "next/font/google";
+import { useRef } from "react";
 
 const AboutPage = () => {
+
+    const containerRef = useRef()
+
+    const { scrollYProgress } = useScroll({container:containerRef})
+
+    const skillRef = useRef()
+    const isSkillRefInView = useInView(skillRef, {margin:"-100px"});
+    const experienceRef = useRef();
+    const isExperienceRefInView = useInView(experienceRef, {margin: "-100px"});
+    const bioRef = useRef();
+    const isBioInView = useInView(bioRef, {margin: "-100px"})
     return (
         <motion.div className="h-full" 
         initial={{y:"-220vh"}} 
@@ -10,30 +23,44 @@ const AboutPage = () => {
         transition={{duration:1}}
       >
         {/* CONTAINER */}
-        <div className="h-full overflow-scroll lg:flex">
+        <div className="h-full overflow-scroll lg:flex" ref={containerRef}>
           {/* TEXT CONTAINER  */}
-          <div className="p-4 sm:p-8 md:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64">
+          <div className="p-4 sm:p-8 md:p-20 xl:p-48 flex flex-col gap-24 md:gap-32 lg:gap-48 xl:gap-64 lg:w-2/3 lg:pr-0 xl:1/2" ref={bioRef}>
             {/* BIOGRAPHY CONTAINER */}
             <div className="flex flex-col gap-12 justify-center">
                 {/* BIOGRAPHY TITLE */}
-              <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
+              <motion.h1 initial={{ x:"-300px" }} 
+                animate={ isBioInView ? { x: 0 } : {}} 
+                transition={{delay:0.2}}
+                className="font-bold text-2xl">BIOGRAPHY</motion.h1>
                 {/* BIOGRAPHY DESC */}
-              <p className="text-lg">
+              <motion.p initial={{ x:"-300px" }} 
+                animate={ isBioInView ? { x: 0 } : {}} transition={{delay: 0.2}} className="text-lg">
                 Lorem ipsum dollar sit amet consectetur adipisicing elit. Nostrum 
                 harum quibusdam cupiditate nobis accusamus sed aut aperiam,
                 reiciendis Vel dolaremque numquam quam nuhil.
-              </p>
+              </motion.p>
                 {/* BIOGRAPHY QUOTE */}
-              <span className="italic">
+              <motion.span initial={{ x:"-300px" }} 
+                animate={ isBioInView ? { x: 0 } : {}} transition={{delay: 0.2}} className="italic">
                 Lorem ispum dolar sit amet consectetur adipisicing elit.
-              </span>
+              </motion.span>
             </div>
             {/* SKILLS CONTAINER */}
-            <div className="flex flex-col gap-12 justify-center">
+            <div className="flex flex-col gap-12 justify-center" ref={skillRef}>
               {/* SKILL TITLE */}
-              <h1 className="font-bold text-2xl">SKILLS</h1>
+              <motion.h1 
+                initial={{ x:"-300px" }} 
+                animate={ isSkillRefInView ? { x: 0 } : {}} 
+                transition={{ delay:0.2 }} 
+                className="font-bold text-2xl"
+              >
+                SKILLS
+              </motion.h1>
               {/* SKILL LIST */}
-              <div className="flex gap-4 flex-wrap">
+              <motion.div initial={{ x:"-300px" }} 
+                animate={ isSkillRefInView ? { x: 0 } : {}} 
+                className="flex gap-4 flex-wrap">
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">React.js</div>
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Next.js</div>
@@ -49,14 +76,19 @@ const AboutPage = () => {
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Ajax</div>
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Html</div>
                 <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Css</div>
-              </div>
+              </motion.div>
             </div>
             {/* EXPERIENCE CONTAINER */}
-            <div className="flex flex-col gap-12 justify-center pb-48">
+            <div className="flex flex-col gap-12 justify-center pb-48" ref={experienceRef}>
               {/* EXPERIENCE TITLE */}
-              <h1 className="font-bold text-2xl">EXPERIENCE</h1>
+              <motion.h1 initial={{ x:"-300px" }} 
+                animate={ isExperienceRefInView ? { x: 0 } : {}} 
+                transition={{delay: 0.2 }}
+                className="font-bold text-2xl">EXPERIENCE</motion.h1>
               {/* EXPERIENCE LIST */}
-              <div className="">
+              <motion.div initial={{ x:"-300px" }} 
+                animate={ isExperienceRefInView ? { x: 0 } : {}}  
+                className="">
               {/* EXPERIENCE LIST ITEM */}
               <div className="flex justify-between h-48">
                 {/* LEFT */}
@@ -143,11 +175,11 @@ const AboutPage = () => {
                 <div className="w-1/3">
                 </div>
               </div>
-              </div>
+              </motion.div>
             </div>
           </div>
           {/* SVG CONTAINER */}
-          <div className="hidden lg-block"></div>
+          <div className="hidden lg-block w-1/3 xl:1-2"></div>
         </div>
       </motion.div>
     )
