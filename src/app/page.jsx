@@ -4,7 +4,21 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
+const CV = 'http://localhost:3000/2.png';
+
+
 const Homepage = () => {
+const downloadFileAtURl= (url) => {
+  const fileName = url.split('/').pop();
+  const aTag = document.createElement('a');
+  aTag.href=url;
+  aTag.setAttribute('download', fileName);
+  document.body.appendChild(aTag);
+  aTag.click();
+  aTag.remove();
+
+};
+  
   
   return (
    <motion.div className="h-full" 
@@ -27,7 +41,7 @@ const Homepage = () => {
         </p>
         {/* BUTTONS */}
         <div className="w-full flex gap-4">
-          <Link href="/portfolio"><button className="p-4 rounded-lg ring-1 ring-black bg-black text-white">View My Work</button></Link>
+          <button onClick={()=>{downloadFileAtURl(CV)}} className="p-4 rounded-lg ring-1 ring-black bg-black text-white">Download CV</button>
           <Link href="/contact"><button className="p-4 rounded-lg ring-1 ring-black">Contact Me</button></Link>
         </div>
       </div>
