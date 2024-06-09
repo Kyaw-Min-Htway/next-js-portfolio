@@ -36,8 +36,7 @@ const downloadFileAtURl= (url) => {
         {/* TITLE */}
         <h1 className="text-4xl md:text-6xl font-bold">Junior Full Stack Web Developer</h1>
         {/* DESC */}
-        <p className="md:text-xl">Welcome to my digital canvas, where innovation and creativity converge. With a keen eye for aesthetics and a mastery of code,
-          my portfolio showcases a diverse collection of projects that reflect my commitment to excellence.
+        <p className="md:text-xl">Aspiring Junior Web Developer seeking to leverage strong programming skills and practical experience with modern web technologies in a fast-paced and innovative company. Committed to continuous learning and enthusiastic about contributing to meaningful web development projects.
         </p>
         {/* BUTTONS */}
         <div className="w-full flex gap-4">

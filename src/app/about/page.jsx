@@ -43,7 +43,7 @@ const AboutPage = () => {
                 {/* BIOGRAPHY QUOTE */}
               <motion.span initial={{ x:"-300px" }} 
                 animate={ isBioInView ? { x: 0 } : {}} transition={{delay: 0.2}} className="italic">
-                Lorem ispum dolar sit amet consectetur adipisicing elit.
+                Motivated Junior Web Developer with hands-on experience in building responsive web applications using HTML, CSS, JavaScript, and React. Proven ability to collaborate effectively in a team environment and deliver high-quality code. Eager to contribute to dynamic web development projects and further hone technical skills in a challenging role.
               </motion.span>
             </div>
             {/* SKILLS CONTAINER */}
