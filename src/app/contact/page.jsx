@@ -80,4 +80,4 @@ const sendEmail = (e) => {
     )
 }
 
-export default ContactPage
+export default ContactPage;
