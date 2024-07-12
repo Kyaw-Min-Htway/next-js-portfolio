@@ -12,15 +12,17 @@ const items = [
     title: "First Website",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     img: "/2.png",
-    link: "https://lama.dev"
+    link: "https://motivate-iota.vercel.app/",
+    target: "_blank"
   },
   {
     id:2,
     color: "from-red-300 to-violet-300",
-    title: "Second Website",
+    title: "Hangman",
     desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
     img: "/2.png",
-    link: "https://lama.dev"
+    link: "https://sample-project-snowy.vercel.app/",
+    target: "_blank"
   },
   {
     id:3,
