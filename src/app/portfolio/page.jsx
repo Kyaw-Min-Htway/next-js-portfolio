@@ -95,7 +95,7 @@ const PortfolioPage = () => {
                   <textPath xlinkHref="#circlePath" className="text-xl">Full Stack Web Developer</textPath>
                 </text>
               </motion.svg>
-              <Link href="/contact" className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center">Hire Me</Link>
+              <button><Link href="/contact" className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center">Hire Me</Link></button>
           </div>
         </div>
       </motion.div>
