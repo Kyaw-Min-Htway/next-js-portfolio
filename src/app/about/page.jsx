@@ -6,12 +6,12 @@ import { useRef } from "react";
 const AboutPage = () => {
 
     const containerRef = useRef(null);
-
     const skillRef = useRef(null);
-    const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
     const experienceRef = useRef(null);
-    const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
     const bioRef = useRef(null);
+
+    const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
+    const isExperienceRefInView = useInView(experienceRef, { margin: "-100px" });
     const isBioInView = useInView(bioRef, { margin: "-100px" });
 
     return (
