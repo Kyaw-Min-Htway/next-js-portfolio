@@ -71,11 +71,11 @@ const ContactPage = () => {
           className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-6 sm:p-12 md:p-16 lg:p-24"
         >
           <span>Dear Kyaw Min Htway,</span>
-          <textarea
-    rows={6}
-    className="bg-transparent border-b-2 border-b-black outline-none resize-none w-full p-2 sm:p-4 md:p-6 lg:p-8"
-    name="user_message"
-  />
+          <input
+            rows={6}
+            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
+            name="user_message"
+          />
           <span>My email address is:</span>
           <input
             type="text"

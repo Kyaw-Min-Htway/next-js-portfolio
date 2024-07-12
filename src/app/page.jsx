@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const CV = 'http://localhost:3000/CV.pdf';
+const CV = 'http://kyawminhtway-portfolio.vercel.app/CV.pdf';
 
 
 const Homepage = () => {
