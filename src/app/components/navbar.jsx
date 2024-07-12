@@ -97,7 +97,7 @@ const Navbar = () => {
                 <Image src="/facebook.png" alt="" width={35} height={35} />
             </Link>
             <Link href="https://www.linkedin.com/Kyaw Min Htway" target="_blank" rel="noopener noreferrer">
-                <Image src="/Linkedin.png" alt="" width={35} height={35} />
+                <Image src="/linkedin.png" alt="" width={35} height={35} />
             </Link>
             </div>
             {/* RESPONSIVE MENU */}
