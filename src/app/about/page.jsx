@@ -1,13 +1,11 @@
 'use client';
 
-import { motion, useInView, useScroll } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const AboutPage = () => {
 
     const containerRef = useRef(null);
-
-    const { scrollYProgress } = useScroll({ container: containerRef });
 
     const skillRef = useRef(null);
     const isSkillRefInView = useInView(skillRef, { margin: "-100px" });
@@ -42,11 +40,11 @@ const AboutPage = () => {
                             transition={{ delay: 0.2 }} 
                             className="text-lg"
                         >
-                            Hello, I'm Kyaw Min Htway.I studied physics at Yangon University, and in 2021 I left university, and then I changed my carrer so I started Web-development journey. First of all, I studied Html, css and javascript on Youtube, and then first I taught FDC course in the code lab.
-                            I didn't feel sufficient, so after learning The Professional Web Developer Course, I was especially skilled in php, laravel. I studied web development continuously, and now I'm continuing to study react js, next js and typescript.
-                            Over the past two years, I've been deeply immersed in web development, exploring various technologies and frameworks to build responsive and intuitive web applications.
-                            My technical skill set includes proficiency in HTML, CSS, JavaScript, and I have hands-on experience with modern frameworks like React.js
-                            Looking ahead, I am eager to contribute my skills and enthusiasm to a dynamic team. 
+                            Hello, I'm Kyaw Min Htway. I studied physics at Yangon University, and in 2021 I left university, and then I changed my career so I started my Web-development journey. First of all, I studied Html, CSS, and JavaScript on YouTube, and then I taught my first FDC course in the code lab. 
+                            I didn't feel sufficient, so after learning The Professional Web Developer Course, I was especially skilled in PHP and Laravel. I studied web development continuously, and now I'm continuing to study React.js, Next.js, and TypeScript. 
+                            Over the past two years, I've been deeply immersed in web development, exploring various technologies and frameworks to build responsive and intuitive web applications. 
+                            My technical skill set includes proficiency in HTML, CSS, JavaScript, and I have hands-on experience with modern frameworks like React.js. 
+                            Looking ahead, I am eager to contribute my skills and enthusiasm to a dynamic team.
                         </motion.p>
                         {/* BIOGRAPHY QUOTE */}
                         <motion.span initial={{ x: "-300px" }} 
@@ -73,22 +71,9 @@ const AboutPage = () => {
                             animate={isSkillRefInView ? { x: 0 } : {}} 
                             className="flex gap-4 flex-wrap"
                         >
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">JavaScript</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">React.js</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Next.js</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">SCSS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Tailwind CSS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MongoDB</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Framer Motion</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Node.js</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Laravel</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">PHP</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">MySQL</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">jQuery</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Ajax</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">HTML</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">CSS</div>
-                            <div className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">Typescript</div>
+                            {['JavaScript', 'React.js', 'Next.js', 'SCSS', 'Tailwind CSS', 'MongoDB', 'Framer Motion', 'Node.js', 'Laravel', 'PHP', 'MySQL', 'jQuery', 'Ajax', 'HTML', 'CSS', 'Typescript'].map(skill => (
+                                <div key={skill} className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">{skill}</div>
+                            ))}
                         </motion.div>
                     </div>
                     {/* EXPERIENCE CONTAINER */}
@@ -106,120 +91,64 @@ const AboutPage = () => {
                             animate={isExperienceRefInView ? { x: 0 } : {}}  
                             className=""
                         >
-                            {/* EXPERIENCE LIST ITEM */}
-                            <div className="flex justify-between h-48">
-                                {/* LEFT */}
-                                <div className="w-1/3">
-                                    {/* JOB TITLE */}
-                                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                        Bechelor Of Science (B.sc)
-                                    </div>
-                                    {/* JOB DESC */}
-                                    <div className="p-3 text-md italic">
-                                        University Of Yangon
-                                    </div>
-                                    {/* JOB DATE */}
-                                    <div className="p-3 text-red-400 text-sm font-semibold">
-                                        2019-2020
-                                    </div>
+                            {[
+                                {
+                                    title: 'Bachelor Of Science (B.sc)',
+                                    description: 'University Of Yangon',
+                                    date: '2019-2020',
+                                    alignLeft: true
+                                },
+                                {
+                                    title: 'Full Stack Developer Course',
+                                    description: 'Code Lab',
+                                    date: '2021',
+                                    alignLeft: false
+                                },
+                                {
+                                    title: 'Professional Web Developer Course',
+                                    description: 'Fairway Technology',
+                                    date: '2022',
+                                    alignLeft: true
+                                },
+                                {
+                                    title: 'JLPT N4',
+                                    description: 'Power Japanese Language School',
+                                    date: '2022',
+                                    alignLeft: false
+                                }
+                            ].map((exp, index) => (
+                                <div key={index} className="flex justify-between h-48">
+                                    {exp.alignLeft ? (
+                                        <>
+                                            <div className="w-1/3">
+                                                <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">{exp.title}</div>
+                                                <div className="p-3 text-md italic">{exp.description}</div>
+                                                <div className="p-3 text-red-400 text-sm font-semibold">{exp.date}</div>
+                                            </div>
+                                            <div className="w-1/6">
+                                                <div className="w-1 h-full bg-gray-600 rounded relative">
+                                                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                                                </div>
+                                            </div>
+                                            <div className="w-1/3"></div>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className="w-1/3"></div>
+                                            <div className="w-1/6">
+                                                <div className="w-1 h-full bg-gray-600 rounded relative">
+                                                    <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
+                                                </div>
+                                            </div>
+                                            <div className="w-1/3">
+                                                <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">{exp.title}</div>
+                                                <div className="p-3 text-md italic">{exp.description}</div>
+                                                <div className="p-3 text-red-400 text-sm font-semibold">{exp.date}</div>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
-                                {/* CENTER */}
-                                <div className="w-1/6">
-                                    {/* LINE */}
-                                    <div className="w-1 h-full bg-gray-600 rounded relative">
-                                        {/* LINE CIRCLE */}
-                                        <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                                    </div>
-                                </div>
-                                {/* RIGHT */}
-                                <div className="w-1/3"></div>
-                            </div>
-                            {/* EXPERIENCE LIST ITEM */}
-                            <div className="flex justify-between h-48">
-                                {/* LEFT */}
-                                <div className="w-1/3"></div>
-                                {/* CENTER */}
-                                <div className="w-1/6">
-                                    {/* LINE */}
-                                    <div className="w-1 h-full bg-gray-600 rounded relative">
-                                        {/* LINE CIRCLE */}
-                                        <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                                    </div>
-                                </div>
-                                {/* RIGHT */}
-                                <div className="w-1/3">
-                                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                    Full Steak Developer Course
-                                       
-                                    </div>
-                                    {/* JOB DESC */}
-                                    <div className="p-3 text-md italic">
-                                    Code Lab
-                                        
-                                    </div>
-                                    {/* JOB DATE */}
-                                    <div className="p-3 text-red-400 text-sm font-semibold">
-                                        2021
-                                    </div>
-                                </div>
-                            </div>
-                            {/* EXPERIENCE LIST ITEM */}
-                            <div className="flex justify-between h-48">
-                                {/* LEFT */}
-                                <div className="w-1/3">
-                                    {/* JOB TITLE */}
-                                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                       
-                                        Professional Web Developer Course
-                                    </div>
-                                    {/* JOB DESC */}
-                                    <div className="p-3 text-md italic">
-                                     Fairway Technology
-                                    </div>
-                                    {/* JOB DATE */}
-                                    <div className="p-3 text-red-400 text-sm font-semibold">
-                                        2022
-                                    </div>
-                                </div>
-                                {/* CENTER */}
-                                <div className="w-1/6">
-                                    {/* LINE */}
-                                    <div className="w-1 h-full bg-gray-600 rounded relative">
-                                        {/* LINE CIRCLE */}
-                                        <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                                    </div>
-                                </div>
-                                {/* RIGHT */}
-                                <div className="w-1/3">
-                                </div>
-                            </div>
-                             {/* EXPERIENCE LIST ITEM */}
-                             <div className="flex justify-between h-48">
-                                {/* LEFT */}
-                                <div className="w-1/3"></div>
-                                {/* CENTER */}
-                                <div className="w-1/6">
-                                    {/* LINE */}
-                                    <div className="w-1 h-full bg-gray-600 rounded relative">
-                                        {/* LINE CIRCLE */}
-                                        <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2"></div>
-                                    </div>
-                                </div>
-                                {/* RIGHT */}
-                                <div className="w-1/3">
-                                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">
-                                       JLPT N4
-                                    </div>
-                                    {/* JOB DESC */}
-                                    <div className="p-3 text-md italic">
-                                        Power Japanese Language school
-                                    </div>
-                                    {/* JOB DATE */}
-                                    <div className="p-3 text-red-400 text-sm font-semibold">
-                                        2022
-                                    </div>
-                                </div>
-                            </div>
+                            ))}
                         </motion.div>
                     </div>
                 </div>
