@@ -1,5 +1,4 @@
-'use client';
-
+'use client'
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
@@ -38,14 +37,14 @@ const ContactPage = () => {
 
   return (
     <motion.div
-      className="h-full"
-      initial={{ y: '-220vh' }}
-      animate={{ y: '0%' }}
+      className="min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48">
+      <div className="w-full max-w-3xl bg-white rounded-lg shadow-lg overflow-hidden">
         {/* TEXT CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 flex items-center justify-center text-6xl">
+        <div className="p-6 sm:p-8 md:p-12 lg:p-16 bg-gray-100 flex items-center justify-center text-3xl sm:text-4xl lg:text-5xl text-center">
           <div>
             {text.split('').map((letter, index) => (
               <motion.span
@@ -68,34 +67,42 @@ const ContactPage = () => {
         <form
           onSubmit={sendEmail}
           ref={form}
-          className="h-1/2 lg:h-full lg:w-1/2 bg-red-50 rounded-xl text-xl flex flex-col gap-8 justify-center p-6 sm:p-12 md:p-16 lg:p-24"
+          className="p-6 sm:p-8 md:p-12 lg:p-16"
         >
-          <span>Dear Kyaw Min Htway,</span>
-          <input
-            rows={6}
-            className="bg-transparent border-b-2 border-b-black outline-none resize-none"
-            name="user_message"
-          />
-          <span>My email address is:</span>
-          <input
-            type="text"
-            className="bg-transparent border-b-2 border-b-black outline-none"
-            name="user_email"
-          />
-          <span>Regards</span>
+          <label className="block mb-4">
+            Dear Kyaw Min Htway,
+            <textarea
+              rows={6}
+              className="block w-full mt-2 bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 outline-none resize-none"
+              name="user_message"
+              required
+            />
+          </label>
+          <label className="block mb-4">
+            My email address is:
+            <input
+              type="email"
+              className="block w-full mt-2 bg-gray-100 border border-gray-300 rounded-lg px-4 py-2 outline-none"
+              name="user_email"
+              required
+            />
+          </label>
+          <label className="block mb-6">
+            Regards
+          </label>
           <button
-            className="bg-purple-200 rounded font-semibold text-gray-600 p-4 hover:bg-purple-300 transition-colors"
+            className="block w-full bg-purple-200 hover:bg-purple-300 text-gray-600 font-semibold rounded-lg py-3 transition-colors"
             type="submit"
           >
             Send
           </button>
           {success && (
-            <span className="text-green-600 font-semibold">
+            <span className="block mt-4 text-green-600 font-semibold">
               Your message has been sent successfully!
             </span>
           )}
           {error && (
-            <span className="text-red-600 font-semibold">
+            <span className="block mt-4 text-red-600 font-semibold">
               There was an error sending your message. Please try again.
             </span>
           )}
@@ -106,3 +113,5 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+
