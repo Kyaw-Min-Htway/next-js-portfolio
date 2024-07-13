@@ -26,7 +26,7 @@ const Homepage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 space-y-8 lg:space-y-0 lg:space-x-8">
         {/* IMAGE CONTAINER */}
-        <div className="h-1/2 lg:h-full lg:w-1/2 relative">
+        <div className="h-64 lg:h-auto lg:w-1/2 relative">
           <Image src="/2.png" alt="Developer" fill className="object-contain" />
         </div>
         {/* TEXT CONTAINER */}
