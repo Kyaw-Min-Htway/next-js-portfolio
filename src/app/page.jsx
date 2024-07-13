@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const CV = 'http://localhost:3000/CV.pdf';
+const CV = 'https://kyawminhtway-portfolio.vercel.app/CV.pdf';
 
 const Homepage = () => {
   const downloadFileAtURl = (url) => {
@@ -15,6 +15,7 @@ const Homepage = () => {
     document.body.appendChild(aTag);
     aTag.click();
     aTag.remove();
+    window.open(CV, '_blank');
   };
 
   return (
@@ -26,7 +27,7 @@ const Homepage = () => {
     >
       <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 space-y-8 lg:space-y-0 lg:space-x-8">
         {/* IMAGE CONTAINER */}
-        <div className="relative w-full lg:w-1/2 h-64 lg:h-auto mb-8 lg:mb-0">
+        <div className="relative w-full lg:w-1/2 h-64 lg:h-auto mb-5 lg:mb-0">
           <Image src="/2.png" alt="Developer" fill className="object-contain" />
         </div>
         {/* TEXT CONTAINER */}
